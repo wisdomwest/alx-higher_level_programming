@@ -11,6 +11,10 @@ class Rectangle:
         self.height = height
         self.width = width
 
+    def __del__(self):
+        """prints a string when deleted"""
+        print("Bye rectangle...")
+
     @property
     def width(self):
         """getter for private attribute width"""
@@ -60,7 +64,3 @@ class Rectangle:
     def __repr__(self):
         """returns a string representation"""
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
-
-     def __del__(self):
-        """prints a string when deleted"""
-        print("Bye rectangle...")

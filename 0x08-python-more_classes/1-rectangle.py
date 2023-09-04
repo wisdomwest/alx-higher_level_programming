@@ -7,17 +7,18 @@ Defines a class Rectangle
 class Rectangle:
      """Representation of a rectangle"""
     def __init__(self, width=0, height=0):
-        self._width = 0
-        self._height = 0
+        """Initializes the rectangle"""
         self.width = width
         self.height = height
 
     @property
+    
     def width(self):
         """getter for private instance attribute width"""
         return self.__width
 
     @width.setter
+    
     def width(self, value):
         """setter for private attribute width"""
         if type(value) is not int:
@@ -27,11 +28,13 @@ class Rectangle:
         self.__width = value
 
     @property
+    
     def height(self):
         """getter for private attribute height"""
         return self.__height
 
     @height.setter
+    
     def height(self, value):
         """setter for private attribute height"""
         if type(value) is not int:

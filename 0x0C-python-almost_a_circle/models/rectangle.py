@@ -90,3 +90,53 @@ class Rectangle(Base):
     def area(self):
         """function for area of rectangle"""
         return self.width * self.height
+
+    def display(self):
+        """function to display triangle in #"""
+        for k in range(self.y):
+            print("")
+
+        for k in range(self.height):
+            print(" " * self.x + "#" * self.width)
+
+    def __str__(self):
+        """string rep of rectangle"""
+        s1 = "[{}] ({}) ".format(self.__class__.__name__, self.id)
+        s2 = "{}/{} - {}/{}".format(self.x, self.y, self.width, self.height)
+        return s1 + s2
+
+    def update(self, *args, **kwargs):
+        """update method assigns arguement to attributes"""
+        if args or len(args) != 0:
+            for i in range(len(args)):
+                if i == 0:
+                    if args[i] is None:
+                        self.__init__(
+                                self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = args[i]
+                if i == 1:
+                    self.width = args[i]
+                if i == 2:
+                    self.height = args[i]
+                if i == 3:
+                    self.x = args[i]
+                if i == 4:
+                    self.y = args[i]
+        else:
+            if kwargs or len(kwargs) != 0:
+                for key, value in kwargs.items():
+                    if key == "id":
+                        if value is None:
+                            self.__init__(
+                                    self.width, self.height, self.x, self.y)
+                        else:
+                            self.id = value
+                    if key == "width":
+                        self.width = value
+                    if key == "height":
+                        self.height = value
+                    if key == "x":
+                        self.x = value
+                    if key == "y":
+                        self.y = value

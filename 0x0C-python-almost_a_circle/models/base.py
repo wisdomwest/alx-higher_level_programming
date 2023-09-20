@@ -23,7 +23,14 @@ class Base:
         """Return JSON serialization of list of dicts"""
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
-        return json.dumps(list_dictionaries)
+        ordered_keys = ['x', 'width', 'id', 'height', 'y']
+        json_list = []
+
+        for dictionary in list_dictionaries:
+            ordered_dict = {key: dictionary[key] for key in ordered_keys}
+            json_list.append(ordered_dict)
+
+        return json.dumps(json_list)
 
     @classmethod
     def save_to_file(cls, list_objs):

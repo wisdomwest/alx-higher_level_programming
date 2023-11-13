@@ -5,8 +5,9 @@ if (isNaN(x)) {
 } else {
   for (let i = 0; i < x; i++) {
     let row = '';
-    for (let k = 0; k < x; k++)
+    for (let k = 0; k < x; k++) {
       row += 'X';
+    }
     console.log(row);
   }
 }

@@ -7,5 +7,4 @@ import urllib.request
 if __name__ == "__main__":
     url = sys.argv[1]
     with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as res:
-        header = res.getheader("X-Request-Id")
-        print(header)
+        print(res.headers.get("X-Request-Id"))

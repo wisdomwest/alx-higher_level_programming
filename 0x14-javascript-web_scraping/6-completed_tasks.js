@@ -6,9 +6,9 @@ request(process.argv[2], (err, response, body) => {
     console.error(err);
   }
 
-  const todos_data = JSON.parse(body);
+  const todos = JSON.parse(body);
   const completed = {};
-  todos_data.forEach((todo) => {
+  todos.forEach((todo) => {
     if (todo.completed && !completed[todo.userId]) {
       completed[todo.userId] = 1;
     } else if (todo.completed) {
